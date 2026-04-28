@@ -1,0 +1,16 @@
+h1 {
+  font-family:"Noto Serif JP", serif;
+  color:rgba(168, 66, 66, 0.804);
+  line-height: 1em;
+  font-size: 30px;
+}
+h2{
+  font-family: "Shippori Mincho", serif;
+  color:rgb(98, 121, 48)
+}
+p,li{
+  font-family: "Shippori Mincho", serif;
+}
+body{
+  background: rgba(158, 158, 19, 0.197)
+}
