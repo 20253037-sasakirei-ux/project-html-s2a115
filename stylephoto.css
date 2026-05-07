@@ -1,0 +1,33 @@
+.mypic{
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+.photo{
+  image-resolution: calc(serif);
+}
+
+body{
+  background-color: rgba(241, 211, 173, 0.533);
+  font-family: "Shippori Mincho", serif;
+  color: rgb(61, 59, 52);
+}
+
+.setumei{
+  font-size: 15px;
+}
+
+#hyoushi{
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
+}
+
+footer{
+  background-color: rgb(217, 182, 139);
+}
+
+.copyright{
+  text-align: right;
+  font-size: 15px;
+}
