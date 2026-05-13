@@ -11,23 +11,100 @@ body{
   background-color: rgba(241, 211, 173, 0.533);
   font-family: "Shippori Mincho", serif;
   color: rgb(61, 59, 52);
+
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container{
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .setumei{
   font-size: 15px;
+  text-align: left;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 #hyoushi{
-  width: 700px;
-  height: 400px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 footer{
+  width: 100%;
   background-color: rgb(217, 182, 139);
+  padding: 40px 0;
+  margin-top: 50px;
 }
 
+
+
+
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 550px;
+  overflow: visible;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+
+  margin: 40px 0;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+}
+
+.gallery img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  filter: blur(4px);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin: 0 50px;
+}
+
+.gallery img.active {
+  width: 400px;
+  filter: blur(0);
+  opacity: 1;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+
+
+#tenpo{
+  font-size: 23px;
+  text-align: center;
+}
+
+.tablea{
+  text-align: center;
+}
+.tablea table{
+  margin: 0 auto;
+  text-align: left;
+}
+th{
+  text-align: left;
+  white-space: nowrap;
+}
 .copyright{
-  text-align: right;
+  text-align: center;
   font-size: 15px;
 }

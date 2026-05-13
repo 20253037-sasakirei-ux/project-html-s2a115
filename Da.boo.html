@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <img id="hyoushi" src="portfolio/image/osteriadaboo04.jpg" alt="Da Boo.の写真">
+  <div class="container">
+  <img id="hyoushi" src="portfolio/image/Dphoto/osteriadaboo04.jpg" alt="Da Boo.の写真">
   <h1>Osteria Da Boo.</h1>
   <h4>隠れ家のようなオステリアで出会う<br>道産食材が際立つ多彩な一皿</h4>
 
@@ -20,56 +21,84 @@
     <br>
   </p>
 </div>
-
-<div class="photo">
-  <img class="mypic" onclick="slideshow(0)" src="portfolio/image/Dpate.jpg" alt="鶏レバーのパテ">
-  <img class="mypic" onclick="slideshow(1)" src="portfolio/image/Dsa-mon.jpg" alt="自家製スモークサーモンと柿">
-  <img class="mypic" onclick="slideshow(2)" src="portfolio/image/Dichigo.jpg" alt="苺とあん肝">
-  <img class="mypic" onclick="slideshow(3)" src="portfolio/image/Dtori.jpg" alt="道産牛のトリッパ">
-  <img class="mypic" onclick="slideshow(4)" src="portfolio/image/Dpasta.jpg" alt="ポモドーロ">
-  <img class="mypic" onclick="slideshow(5)" src="portfolio/image/Ddolce1.jpg" alt="バニラアイスとアップルパイ">
-  <img class="mypic" onclick="slideshow(6)" src="portfolio/image/Ddolce2.jpg" alt="苺レアチーズのジェラート">
+</div>
+<div class = "gallery">
+  <img class="active" src="portfolio/image/Dphoto/Dichigo.jpg" alt="苺とあん肝" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Dsa-mon.jpg" alt="自家製スモークサーモンと柿" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Dpate.jpg" alt="鶏レバーのパテ" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Dtori.jpg" alt="道産牛のトリッパ" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Dpasta.jpg" alt="シンプルなポモドーロ" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Ddolce1.jpg" alt="バニラアイスとアップルパイ" onclick="focusImage(this)">
+  <img src="portfolio/image/Dphoto/Ddolce2.jpg" alt="苺とレアチーズ" onclick="focusImage(this)">
 </div>
 
-</body>
+<script>
+function focusImage(selectedImg) {
+  const gallery = document.querySelector('.gallery');
+  const allImages = document.querySelectorAll('.gallery img');
 
+  allImages.forEach(img => img.classList.remove('active'));
+  selectedImg.classList.add('active');
+
+  setTimeout(() => {
+    const screenCenter = window.innerWidth / 2;
+
+    const imgRect = selectedImg.getBoundingClientRect();
+const style = window.getComputedStyle(gallery);
+    const matrix = new WebKitCSSMatrix(style.transform);
+    const currentX = matrix.m41;
+
+    const imgCenter = imgRect.left + (imgRect.width / 2);
+    const diff = screenCenter - imgCenter;
+
+    gallery.style.transform = `translateX(${currentX + diff}px)`;
+  }, 50);
+}
+
+window.addEventListener('load', () => {
+  const firstImg = document.querySelector('.gallery img');
+  if (firstImg) {
+    setTimeout(() => {
+      focusImage(firstImg);
+    }, 200);
+  }
+});
+</script>
+
+
+</div>
 <footer>
-  <h4>店舗情報</h4>
+  <h4 id="tenpo">店舗情報</h4>
+<div class="tablea">
   <table>
-
     <tr>
-    <th>店名</th>
-    <td>　osteria Da Boo. / オステリア　ダ ブー</td>
+      <th class="tablea">店名</th>
+      <td>　osteria Da Boo. / オステリア　ダ ブー</td>
     </tr>
-
     <tr>
-    <th>所在地</th>
-    <td>　〒060-0061 北海道札幌市中央区南１条西４丁目１４−３ 第26ビッグビル 2F</td>
+      <th>所在地</th>
+      <td>　〒060-0061 北海道札幌市中央区南１条西４丁目１４−３ 第26ビッグビル 2F</td>
     </tr>
-
     <tr>
-    <th>電話番号</th>
-    <td>　011-206-4461</td>
+      <th>電話番号</th>
+      <td>　011-206-4461</td>
     </tr>
-
     <tr>
-    <th>営業時間</th>
-    <td>　18:00~0:00</td>
+      <th>営業時間</th>
+      <td>　18:00~0:00</td>
     </tr>
-
     <tr>
-    <th>定休日</th>
-    <td>　日曜日　その他不定休</td>
+      <th>定休日</th>
+      <td>　日曜日　その他不定休</td>
     </tr>
-
     <tr>
-    <th>Instagram</th>
-    <td>　@DAboo</td>
+      <th>Instagram</th>
+      <td>　@da_boo.46</td>
     </tr>
-
   </table>
+</div>
   <br>
   <div class="copyright">&copy; Ray_PhotoGallery.</div>
 </footer>
-
+</body>
 </html>
