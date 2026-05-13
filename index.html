@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+textarea<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -21,10 +21,9 @@
               <li class="header-nav-item"><a href="#about">ABOUT</a></li>
               <li class="header-nav-item"><a href="#skill">SKILL</a></li>
               <li class="header-nav-item"><a href="#works">WORKS</a></li>
-              <li class="header-nav-item"><a href="#PHOTO">PHOTO</a></li>
-              <li class="header-nav-item"><a href="#CONTACT">CONTACT</a></li>
+              <li class="header-nav-item"><a href="#photo">PHOTO</a></li>
+              <li class="header-nav-item"><a href="#contact">CONTACT</a></li>
               <li class="header-nav-item"><a href="index_sub.html"target="_blank">SUB</a></li>
-
             </ul>
           </nav>
         </div>
@@ -133,20 +132,7 @@
           </div>
         </section>
         <!-- /skill -->
-        <section class="photo section" id="photo">
-          <div class="inner">
-            <h2 class="title">PHOTO</h2>
-            <div class="photop">
-              <img src="portfolio/Camera Roll/IMG_0346.jpg" alt="カフェ">
-              <img src="portfolio/Camera Roll/IMG_0450.jpg" alt="一麦">
-              <img src="portfolio/Camera Roll/IMG_1192.jpg" alt="bule">
-              <img src="portfolio/Camera Roll/IMG_1982.jpg" alt="inu">
-              <img src="portfolio/Camera Roll/IMG_1200.jpg" alt="inu">
-              <img src="portfolio/Camera Roll/IMG_0370.jpg" alt="">
-            </div>
-          </div>
 
-        </section>
         <!-- works -->
         <section class="works section" id="works">
           <div class="inner">
@@ -178,11 +164,67 @@
           </div>
         </section>
         <!-- /works -->
-        <!-- photo -->
 
+        <!-- photo -->
+        <section class="photo section" id="photo">
+          <div class="inner">
+            <h2 class="title">PHOTO</h2>
+            <br>
+            <div class="photop">
+              <div class="flex-item item1">
+                <img src="portfolio/Camera Roll/IMG_0346.jpg" alt="BOOKCAFE">
+              </div>
+              <div class="flex-item item2">
+                <img src="portfolio/Camera Roll/IMG_0450.jpg" alt="一麦">
+              </div>
+              <div class="flex-item item3">
+                <img src="portfolio/Camera Roll/IMG_1192.jpg" alt="bule">
+              </div>
+              <div class="flex-item item4">
+                <img src="portfolio/Camera Roll/IMG_1982.jpg" alt="inu">
+              </div>
+              <div class="flex-item item5">
+                <img src="portfolio/Camera Roll/IMG_1200.jpg" alt="inu">
+              </div>
+              <div class="flex-item item6">
+                <img src="portfolio/Camera Roll/IMG_0370.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- /photo -->
         <!-- contact -->
-
+        <section class="contact section" id="contact">
+          <div class="inner">
+            <h2 class="title">CONTACT</h2>
+            <form action="#">
+              <div class="contact-form">
+                <div class="contact-item">
+                  <p class="form-title">お名前<span class="must">必須</span></p>
+                  <input type="text" name="username"/>
+                </div>
+                <div class="contact-item">
+                  <p class="form-title">メールアドレス<span class="must">必須</span></p>
+                  <input type="email" name="mail"/>
+                </div>
+                <div class="contact-item">
+                  <p class="form-title">電話番号</p>
+                  <input type="tel" name="tel"/>
+                </div>
+                <div class="contact-item">
+                  <p class="form-title">お問い合わせ<span class="must">必須</span></p>
+                  <textarea name="contact" cols="40" rows="4" maxlength="40"">
+                  </textarea>
+                </div>
+                <br>
+                <div class="btn-item">
+                  <input class="btn" type="submit" onclick="alert('send now!'); return false;" value="送信">
+                </div>
+              </div>
+              </form>
+              <br><br>
+          </div>
+        </section>
         <!-- /contact -->
 
         <div class="page-top">

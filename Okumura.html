@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trattoria Da OKUMURA</title>
+  <link rel="stylesheet" href="stylephoto.css">
+</head>
+
+<body>
+  <div class="container">
+  <img id="hyoushi" src="portfolio/image/Ophoto/Oku10.jpg" alt="Da Boo.の写真">
+  <h1>Trattoria Da OKUMURA</h1>
+  <h4>伝統的なイタリアの日常の味をカジュアルに</h4>
+
+<div class="setumei">
+  <p>大通駅すぐ、地下に降りると広がるこじんまりとしたトラットリア ダ オクムラ。<br>
+    <br>お店のロゴが大きく書かれた扉が出迎えてくれます。<br>店内には店主自らが厳選したワインがずらりと揃えられており、異国情緒あふれるレトロな雰囲気です。<br>
+    <br>飾り立てない料理からは奥深い味わいが、シンプルな白皿への盛り付けは家庭料理のような温かさが感じられます。<br>
+    <br>店主のおすすめを堪能できるコースから、アラカルトのメニューも豊富に取り揃えており、料理に合わせたワインのおすすめと共に穏やかな一夜を過ごせることでしょう。
+    <br>
+  </p>
+</div>
+</div>
+<div class = "gallery">
+  <img class="active" src="portfolio/image/Ophoto/Oku1.jpg" alt="前菜１" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku2.jpg" alt="前菜２" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku3.jpg" alt="前菜３" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku4.jpg" alt="ひよこ豆のスープ" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku5.jpg" alt="パスタ" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku6.jpg" alt="鶏肉" onclick="focusImage(this)">
+  <img src="portfolio/image/Ophoto/Oku7.jpg" alt="ティラミス" onclick="focusImage(this)">
+</div>
+
+<script>
+function focusImage(selectedImg) {
+  const gallery = document.querySelector('.gallery');
+  const allImages = document.querySelectorAll('.gallery img');
+
+  allImages.forEach(img => img.classList.remove('active'));
+  selectedImg.classList.add('active');
+
+  setTimeout(() => {
+    const screenCenter = window.innerWidth / 2;
+
+    const imgRect = selectedImg.getBoundingClientRect();
+const style = window.getComputedStyle(gallery);
+    const matrix = new WebKitCSSMatrix(style.transform);
+    const currentX = matrix.m41;
+
+    const imgCenter = imgRect.left + (imgRect.width / 2);
+    const diff = screenCenter - imgCenter;
+
+    gallery.style.transform = `translateX(${currentX + diff}px)`;
+  }, 50);
+}
+
+window.addEventListener('load', () => {
+  const firstImg = document.querySelector('.gallery img');
+  if (firstImg) {
+    setTimeout(() => {
+      focusImage(firstImg);
+    }, 200);
+  }
+});
+</script>
+
+
+
+</div>
+<footer>
+  <h4 id="tenpo">店舗情報</h4>
+<div class="tablea">
+  <table>
+    <tr>
+      <th class="tablea">店名</th>
+      <td>　TRATTORIA DA OKUMURA / トラットリア ダ オクムラ</td>
+    </tr>
+    <tr>
+      <th>所在地</th>
+      <td>　〒060-0062 北海道札幌市中央区南２条西４丁目 乙井ビル 地下１階</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td>　011-215-0655</td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>　16:00~23:00</td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>　不定休</td>
+    </tr>
+    <tr>
+      <th>Instagram</th>
+      <td>　@trattoria_da_okumura</td>
+    </tr>
+  </table>
+</div>
+  <br>
+  <p><a href="index_sub.html">Return to Home</a></p>
+  <div class="copyright">&copy; Ray_PhotoGallery.</div>
+</footer>
+</body>
+</html>
