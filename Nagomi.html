@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagominostsuwa.n</title>
+  <link rel="stylesheet" href="stylephoto.css">
+</head>
+
+<body>
+  <div class="container">
+  <img id="hyoushi" src="portfolio/image/Nphoto/Nagomi.jpg" alt="Da Boo.の写真">
+  <h1>和みの器. N</h1>
+  <h4>ワインを片手に和むひと時<br>閃きと技術が生む未体験の美食</h4>
+
+<div class="setumei">
+  <p>
+    すすきののビル内に佇む創作イタリアン。<br>広々としたオープンキッチンは臨場感抜群で、組み立てられていく美しい芸術の一皿には舌を巻かれます。<br>
+    <br>普段口にすることのない珍しい食材や、素材の味を生かした意外性のある組み合わせの一皿からは思いがけない好みの味が発見できるかもしれません。<br>
+    <br>こだわりぬいた一皿には自然派ワインの多種多様な味わいとマッチします。<br>ウォークインセラーから好みの１本を見つけるのも良いかもしれません。
+    <br>
+  </p>
+</div>
+</div>
+<div class = "gallery">
+
+  <img src="portfolio/image/Nphoto/IMG_0472.jpg" alt="イカ墨リゾット" onclick="focusImage(this)">
+  <img src="portfolio/image/Nphoto/IMG_2180.jpg" alt="春パスタ" onclick="focusImage(this)">
+  <img src="portfolio/image/Nphoto/IMG_1681.jpg" alt="天津飯風" onclick="focusImage(this)">
+  <img src="portfolio/image/Nphoto/IMG_2779.jpg" alt="マッシュルームパスタ" onclick="focusImage(this)">
+  <img src="portfolio/image/Nphoto/IMG_2751.jpg" alt="ホタルイカリゾット" onclick="focusImage(this)">
+  <img src="portfolio/image/Nphoto/IMG_2278.jpg" alt="イカ墨パスタ" onclick="focusImage(this)">
+  <img class="active" src="portfolio/image/Nphoto/IMG_0762.jpg" alt="ベーコンリゾット" onclick="focusImage(this)">
+</div>
+
+<script>
+function focusImage(selectedImg) {
+  const gallery = document.querySelector('.gallery');
+  const allImages = document.querySelectorAll('.gallery img');
+
+  allImages.forEach(img => img.classList.remove('active'));
+  selectedImg.classList.add('active');
+
+  setTimeout(() => {
+    const screenCenter = window.innerWidth / 2;
+
+    const imgRect = selectedImg.getBoundingClientRect();
+const style = window.getComputedStyle(gallery);
+    const matrix = new WebKitCSSMatrix(style.transform);
+    const currentX = matrix.m41;
+
+    const imgCenter = imgRect.left + (imgRect.width / 2);
+    const diff = screenCenter - imgCenter;
+
+    gallery.style.transform = `translateX(${currentX + diff}px)`;
+  }, 50);
+}
+
+window.addEventListener('load', () => {
+  const firstImg = document.querySelector('.gallery img');
+  if (firstImg) {
+    setTimeout(() => {
+      focusImage(firstImg);
+    }, 200);
+  }
+});
+</script>
+
+
+
+</div>
+<footer>
+  <h4 id="tenpo">店舗情報</h4>
+<div class="tablea">
+  <table>
+    <tr>
+      <th class="tablea">店名</th>
+      <td>　和みの器.N/エンネ</td>
+    </tr>
+    <tr>
+      <th>所在地</th>
+      <td>　〒060-0063 北海道札幌市中央区南３条西３丁目１ プレイタウンふじ井 3F</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td>　011-596-7284</td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>　18:00~2:00</td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>　木曜日/その他不定休</td>
+    </tr>
+    <tr>
+      <th>Instagram</th>
+      <td>　@nagominoutsuwa.enne</td>
+    </tr>
+  </table>
+</div>
+  <br>
+  <p><a href="photosub.html">Return to Home</a></p>
+  <div class="copyright">&copy; Ray_PhotoGallery.</div>
+</footer>
+</body>
+</html>

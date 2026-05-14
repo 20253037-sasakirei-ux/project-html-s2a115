@@ -37,7 +37,7 @@ body{
 #hyoushi{
   width: 100%;
   max-width: 800px;
-  height: auto;
+  height: 500px;
   object-fit: cover;
   margin-bottom: 20px;
 }

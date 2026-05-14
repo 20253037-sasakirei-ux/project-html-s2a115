@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrenchPanda</title>
+  <link rel="stylesheet" href="stylephoto.css">
+</head>
+
+<body>
+  <div class="container">
+  <img id="hyoushi" src="portfolio/image/Pphoto/Pmise.jpg" alt="Da Boo.の写真">
+  <h1>French Panda</h1>
+  <h4>正統派フレンチレストラン『AKINAGAO』の姉妹店<br>気軽に立ち寄れるカジュアルな "まかないフレンチ"</h4>
+
+<div class="setumei">
+  <p>
+    <br>フレンチレストラン『AKINAGAO』の地下にひそむアンティーク調の店内。<br>至る所に置かれたパンダのぬいぐるみに癒されながら気張らない一皿を頂けます。<br>
+    <br>自社のワイナリーで製造した自然派ワインなどが多数取り揃えられており、ソムリエによる詳しい説明を受けながら好みの一杯を探ります。<br>
+    <br>フレンチだけでなく中華のメニューもあり、気分転換で注文するのも楽しいでしょう。<br>デセールの種類も豊富、二次会にもおすすめな気軽に立ち寄れるフレンチはいかがでしょうか。
+    <br>
+  </p>
+</div>
+</div>
+<div class = "gallery">
+
+  <img src="portfolio/image/Pphoto/Pbata2.jpg" alt="カナッペ" onclick="focusImage(this)">
+  <img src="portfolio/image/Pphoto/Pesuka.jpg" alt="エスカベッシュ" onclick="focusImage(this)">
+  <img src="portfolio/image/Pphoto/Ppasta.jpg" alt="パスタ" onclick="focusImage(this)">
+  <img src="portfolio/image/Pphoto/Pdolce1.jpg" alt="プルーンのタルト" onclick="focusImage(this)">
+  <img src="portfolio/image/Pphoto/Papple.jpg" alt="アップルパイ" onclick="focusImage(this)">
+  <img src="portfolio/image/Pphoto/Pwine1.jpg" alt="ワイン" onclick="focusImage(this)">
+  <img class="active" src="portfolio/image/Pphoto/Pwainepanda.jpg" alt="ワインとパンダ" onclick="focusImage(this)">
+</div>
+
+<script>
+function focusImage(selectedImg) {
+  const gallery = document.querySelector('.gallery');
+  const allImages = document.querySelectorAll('.gallery img');
+
+  allImages.forEach(img => img.classList.remove('active'));
+  selectedImg.classList.add('active');
+
+  setTimeout(() => {
+    const screenCenter = window.innerWidth / 2;
+
+    const imgRect = selectedImg.getBoundingClientRect();
+const style = window.getComputedStyle(gallery);
+    const matrix = new WebKitCSSMatrix(style.transform);
+    const currentX = matrix.m41;
+
+    const imgCenter = imgRect.left + (imgRect.width / 2);
+    const diff = screenCenter - imgCenter;
+
+    gallery.style.transform = `translateX(${currentX + diff}px)`;
+  }, 50);
+}
+
+window.addEventListener('load', () => {
+  const firstImg = document.querySelector('.gallery img');
+  if (firstImg) {
+    setTimeout(() => {
+      focusImage(firstImg);
+    }, 200);
+  }
+});
+</script>
+
+
+
+</div>
+<footer>
+  <h4 id="tenpo">店舗情報</h4>
+<div class="tablea">
+  <table>
+    <tr>
+      <th class="tablea">店名</th>
+      <td>　French Panda / フレンチパンダ</td>
+    </tr>
+    <tr>
+      <th>所在地</th>
+      <td>　〒060-0063 北海道札幌市中央区南3条西3丁目3-3 地下1階</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td>　011-206-7243</td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>　17:30~1:00 / 17:30~2:00</td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>　なし</td>
+    </tr>
+    <tr>
+      <th>Instagram</th>
+      <td>　@frenchpanda</td>
+    </tr>
+  </table>
+</div>
+  <br>
+  <p><a href="photosub.html">Return to Home</a></p>
+  <div class="copyright">&copy; Ray_PhotoGallery.</div>
+</footer>
+</body>
+</html>
